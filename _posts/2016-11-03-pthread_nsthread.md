@@ -13,7 +13,6 @@ iOS开发中，多线程相关的知识点主要包括**pthread**、**NSThread**
 - **简单介绍pthread**
 - **NSThread的使用**
 
--------------------
 
 ## pthread
 
