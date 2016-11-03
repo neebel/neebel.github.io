@@ -6,8 +6,6 @@ date: 2016-11-03 18:08:15
 pid: 20161103-180815
 ---
 
-#iOS多线程之pthread和NSThread
-
 iOS开发中，多线程相关的知识点主要包括**pthread**、**NSThread**、**NSOperation**和**GCD**，我们经常用到的就数**NSOperation**和**GCD**了。学习了一段时间后，觉得有必要总结巩固一下，对自己也是一种提高。**pthread**和**NSThread**内容不多，所以放在同一篇，**NSOperation**和**GCD**各一篇，总共三篇。
 
 本篇文章主要内容：
