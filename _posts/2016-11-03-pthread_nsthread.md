@@ -63,12 +63,14 @@ pthread_mutex_destroy(&_lock); //最后销毁互斥锁
 ......
 
 **操作线程**
+
 >cancel //取消线程
   exit  //停止线程
   sleepUntilDate:(NSDate *)date //线程休眠到某个时间点
   sleepForTimeInterval:(NSTimeInterval)ti //线程休眠一段时间
 
 **获取线程信息**
+
 > (double)threadPriority;//获取线程优先级
    BOOL isMainThread; //当前线程是否是主线程，开发中比较有用
    BOOL executing;//是否正在执行
