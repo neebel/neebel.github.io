@@ -15,7 +15,7 @@ iOS开发中，多线程相关的知识点主要包括**pthread**、**NSThread**
 
 -------------------
 
-##pthread
+## pthread
 
 > POSIX线程（POSIX threads），简称Pthreads，是线程的POSIX标准。该标准定义了创建和操纵线程的一整套API。在类Unix操作系统（Unix、Linux、Mac OS X等）中，都使用Pthreads作为操作系统的线程。
 
@@ -39,7 +39,7 @@ pthread_mutex_destroy(&_lock); //最后销毁互斥锁
 
 **互斥锁保证了临界区代码在某个时刻只有一个线程在执行。**iOS开发中还有其他类型的锁，以后会再写一篇文章单独介绍。
 
-##NSThread的使用
+## NSThread的使用
 
 **创建**
 
