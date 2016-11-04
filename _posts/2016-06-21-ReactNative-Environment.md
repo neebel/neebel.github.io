@@ -100,13 +100,9 @@ Android SDK Build-tools version 23.0.1（必须是这个版本）
 2.
 
 >09:56:47 E/adb: error: could not install *smartsocket* listener: Address already in use
-
  09:56:47 E/adb: ADB server didn't ACK
-
  09:56:47 E/adb: * failed to start daemon *
-
  09:56:47 E/ddms: '/usr/local/opt/android-sdk/platform-tools/adb,start-server' failed -- run manually if necessary
-
  09:56:47 E/adb: error: cannot connect to daemon
  :app:installDebug FAILED
 
