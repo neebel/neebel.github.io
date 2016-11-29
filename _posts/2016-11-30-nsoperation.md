@@ -69,6 +69,7 @@ NSInvocationOperation *downloadOperation = [[NSInvocationOperation alloc] initWi
 > blockOperationWithBlock:(void (^)(void))block；
 
 添加操作：
+
 > addExecutionBlock:(void (^)(void))block;
 
 代码示例：
@@ -103,7 +104,7 @@ NSBlockOperation *blockOperation = [NSBlockOperation blockOperationWithBlock:^{
 
 有些情况下，前面两种方式不能满足我们的需求，就需要自定义NSOperation了。我们可以创建两种类型的NSOperation：非并发的和并发的。本人能力有限，恐介绍不全，想要彻底吃透这块需要一定时间，建议大家直接参照Apple提供的[官方文档及示例代码](https://developer.apple.com/library/content/documentation/General/Conceptual/ConcurrencyProgrammingGuide/OperationObjects/OperationObjects.html#//apple_ref/doc/uid/TP40008091-CH101-SW16)。
 
-##设置操作的优先级
+## 设置操作的优先级
 
 有时候我们想提前或推迟一些操作的执行，就可以通过设置操作的优先级来达到目的。操作的优先级分为以下几个级别：
 
@@ -198,7 +199,7 @@ NSBlockOperation *downloadPicOperation = [NSBlockOperation blockOperationWithBlo
 
 当我们暂停某个操作队列时，操作队列就会停止调度新的操作执行，而正在执行的操作不会被停止。
 
-##操作完成的回调
+## 操作完成的回调
 代码示例：
 
 ```
