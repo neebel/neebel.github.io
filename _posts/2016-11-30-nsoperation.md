@@ -11,7 +11,7 @@ pid: 20161130-004958
 本篇文章主要内容：
 
 - **NSOperation和NSOperationQueue简介**
-- **创建操作对象的三种方式 **
+- **创建操作对象的三种方式**
 - **设置操作的优先级**
 - **设置操作的依赖**
 - **获取操作的状态**
@@ -28,6 +28,7 @@ NSOperation和NSOperationQueue理解起来很容易，我们可以参照GCD相�
 ### 1.NSInvocationOperation
 
 初始化方法：
+
 >initWithTarget:(id)target selector:(SEL)sel object:(nullable id)arg;
 
 代码示例：
@@ -64,6 +65,7 @@ NSInvocationOperation *downloadOperation = [[NSInvocationOperation alloc] initWi
 ### 2.NSBlockOperation
 
 初始化方法：
+
 > blockOperationWithBlock:(void (^)(void))block；
 
 添加操作：
@@ -118,6 +120,7 @@ typedef NS_ENUM(NSInteger, NSOperationQueuePriority) {
 我们需要注意的是：操作的优先级是相对于**同一个操作队列**中的其他操作而言的，不同操作队列中的操作的优先级没有可比性。例如：操作队列1中的操作A的优先级为NSOperationQueuePriorityVeryHigh，操作队列2中的操作B的优先级为NSOperationQueuePriorityVeryLow，至于A和B谁先执行，完全不确定。
 
 代码示例：
+
 ```
 NSBlockOperation *downloadPicOperation = [NSBlockOperation blockOperationWithBlock:^{
         NSLog(@"start download picture ------ %@", [NSThread currentThread]);
@@ -139,11 +142,12 @@ NSBlockOperation *downloadPicOperation = [NSBlockOperation blockOperationWithBlo
 
 多次运行代码，我们发现优先级高的不一定会早于优先级低的任务执行，这就是我们需要注意的另外一点：**优先级高的操作先执行的概率大，但并不表示必然先执行**。设置优先级的代码要在操作放入操作队列之前，否则是不起作用的或者说会产生不利的影响。
 
-##设置操作的依赖
+## 设置操作的依赖
 
 在并发编程中，如果任务之间没有执行的先后关系，那么它们并发执行是没问题的，但还有一种情况是某个任务的执行需要其他任务的执行结果，这时候就要通过设置操作的依赖来达到目的，类似于GCD的同步。
 
 代码示例：
+
 ```
 - (void)startAction
 {
@@ -172,15 +176,15 @@ NSBlockOperation *downloadPicOperation = [NSBlockOperation blockOperationWithBlo
 - (void)removeDependency:(NSOperation *)op;
 ```
 
-##获取操作的状态
+## 获取操作的状态
 
 操作的生命周期可以表示为：ready  —>  excute —> finish ，我们将操作放入操作队列后，操作的isReady状态取决于其依赖是否都已执行完成，操作的isExecuting状态表示操作正在执行，操作的isFinished状态表示操作已经执行完成或者被cancel掉了。操作同一时刻只可能是以上三种状态中的一种。
 
-##取消操作
+## 取消操作
 
 取消单个操作，我们可以调用cancel方法；取消操作队列中的所有操作，我们可以调用cancelAllOperations方法。我们最好是在确定不需要某个操作的时候才取消它，因为一旦取消，这个操作就被作为finished处理。
 
-##暂停和恢复操作队列
+## 暂停和恢复操作队列
 
 暂停操作队列：
 ```
@@ -196,6 +200,7 @@ NSBlockOperation *downloadPicOperation = [NSBlockOperation blockOperationWithBlo
 
 ##操作完成的回调
 代码示例：
+
 ```
 - (void)startAction
 {
