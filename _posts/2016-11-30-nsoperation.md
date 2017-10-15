@@ -1,7 +1,7 @@
 ---
 layout: post
 title: iOS多线程之NSOperation
-categories: iOS NSOperation 
+categories: iOS 
 date: 2016-11-30 00:49:58
 pid: 20161130-004958
 ---

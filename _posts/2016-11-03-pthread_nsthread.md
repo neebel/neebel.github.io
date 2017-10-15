@@ -1,7 +1,7 @@
 ---
 layout: post
 title: iOS多线程之pthread和NSThread
-categories: iOS pthread NSThread 
+categories: iOS 
 date: 2016-11-03 18:08:15
 pid: 20161103-180815
 ---
