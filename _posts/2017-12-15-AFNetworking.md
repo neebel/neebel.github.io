@@ -159,8 +159,6 @@ pid: 20171215-105900
 
       下载任务重新开始时调用，可以用来做断点续传
 
- (15) 
-
 ## AFURLSessionManagerTaskDelegate代理
 
  (1) - (void)URLSession:(__unused NSURLSession *)session
